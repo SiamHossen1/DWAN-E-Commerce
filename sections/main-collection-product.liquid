@@ -1,0 +1,103 @@
+<style>
+    .main_collection_product_container{
+      margin-top: {{section.settings.collection_product_top_margin| times: 0.5 | round: 0}}px;
+      margin-bottom: {{section.settings.collection_product_bottom_margin| times: 0.5 | round: 0}}px;
+    }
+    @media screen and (min-width: 768px) {
+      .main_collection_product_container {
+        margin-top: {{section.settings.collection_product_top_margin}}px;
+        margin-bottom: {{section.settings.collection_product_bottom_margin}}px;
+      }
+    }
+    .main_collection_product_container h1{
+      text-align: center;
+      color: var(--accent-color);
+      margin-bottom: {{section.settings.collection_product_bottom_margin| times: 0.5 | round: 0}}px;
+    }
+    @media screen and (min-width: 768px) {
+      .main_collection_product_container h1{
+        margin-bottom: {{section.settings.collection_product_bottom_margin}}px;
+      }
+    }
+    .no_result_container{
+      text-align: center;
+      padding-block: 12rem;
+    }
+  </style>
+  <section class="main_collection_product_container">
+    <h1>{{ collection.title | escape }}</h1>
+  
+    {% comment %} Sort and Filter  {% endcomment %}
+    {% render 'sort-filter', collection: collection %}
+  
+    {% paginate collection.products by 12 %}
+      {% if collection.products.size == 0 %}
+        <div class="no_result_container">
+          <p class="h2">No products found</p>
+          <span class="h2">Use fewer filters or</span>
+          <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="h2 hover-line">Clear All</a>
+        </div>
+      {% else %}
+        <div class="product_card_container">
+          {% for product in collection.products %}
+            <a href="{{product.url}}" class="product_card">
+              <img src="{{product.featured_image | image_url: width: 250}}" alt="">
+              <div class="product_content">
+                <p class="brand">Brand : {{ product.vendor }}</p>
+                <p>{{ product.title }}</p>
+                <div class="price_container">
+                  <p class="current_price">{{ product.price | money_without_trailing_zeros }}</p>
+                  <p class="real_price">{{ product.compare_at_price | money_without_trailing_zeros }}</p>
+                </div>
+                {% if product.options_by_name.size.values.size < 2 and product.options_by_name.color.values.size < 2 %}
+                  {% form 'product', product %}
+                    <input
+                      id="product_id"
+                      type="hidden"
+                      name="id"
+                      value="{{product.selected_or_first_available_variant.id}}"
+                    >
+                    <button class="product_card_add_to_cart">Add to cart</button>
+                  {% endform %}
+                {% else %}
+                  <button class="product_card_select">Select</button>
+                {% endif %}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+        {% render 'pagination', paginate: paginate %}
+      {% endif %}
+    {% endpaginate %}
+  </section>
+  {% schema %}
+  {
+    "name": "Main collection product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section margin"
+      },
+      {
+        "type": "range",
+        "id": "collection_product_top_margin",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Top margin",
+        "default": 45
+      },
+      {
+        "type": "range",
+        "id": "collection_product_bottom_margin",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Bottom margin",
+        "default": 0
+      }
+    ]
+  }
+  {% endschema %}

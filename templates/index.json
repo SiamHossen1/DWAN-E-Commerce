@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "image_sildeshow": {
+      "type": "image-sildeshow",
+      "blocks": {
+        "slide_item": {
+          "type": "Slide",
+          "settings": {
+            "heading": "Slide heading",
+            "text": "Text from here describes your slide",
+            "btn_label": "See more",
+            "btn_link": ""
+          }
+        },
+        "2974e02d-f826-4bbf-82c8-6ac8ea4af53b": {
+          "type": "Slide",
+          "settings": {
+            "heading": "Slide heading",
+            "text": "Text from here describes your slide",
+            "btn_label": "See more",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_item",
+        "2974e02d-f826-4bbf-82c8-6ac8ea4af53b"
+      ],
+      "settings": {
+        "show_arrows": true,
+        "show_bullets": true,
+        "speed_sliding": 0.8,
+        "top_margin": 0,
+        "bottom_margin": 0
+      }
+    },
+    "home_collection": {
+      "type": "home-collections",
+      "blocks": {
+        "57ed9b55-82a8-4b86-b33a-7c2faf3c6679": {
+          "type": "Collection_Item",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/premium-tshirt-2.jpg",
+            "label_collection": "T-Shirt",
+            "home_collection": "t-shirt"
+          }
+        },
+        "collection_items": {
+          "type": "Collection_Item",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/navy-blue-panjabi.jpg",
+            "label_collection": "Panjabi",
+            "home_collection": "panjabi"
+          }
+        },
+        "9d2c30cd-ceb8-48b6-875f-df555bd85e91": {
+          "type": "Collection_Item",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/ash-pant.jpg",
+            "label_collection": "Pant",
+            "home_collection": "pant"
+          }
+        },
+        "224f31ad-a29b-4b00-97a9-451861e97617": {
+          "type": "Collection_Item",
+          "settings": {
+            "collection_image": "shopify:\/\/shop_images\/show-banner.webp",
+            "label_collection": "Shoe",
+            "home_collection": "shoe"
+          }
+        }
+      },
+      "block_order": [
+        "57ed9b55-82a8-4b86-b33a-7c2faf3c6679",
+        "collection_items",
+        "9d2c30cd-ceb8-48b6-875f-df555bd85e91",
+        "224f31ad-a29b-4b00-97a9-451861e97617"
+      ],
+      "settings": {
+        "top_home_collection_margin": 45,
+        "bottom_home_collection_margin": 0
+      }
+    },
+    "sale_poster": {
+      "type": "sale-poster",
+      "settings": {
+        "subtitle_top": "Up to",
+        "title": "30%",
+        "subtitle_bottom": "OFF",
+        "button_label": "SEE MORE",
+        "button_link": "",
+        "sale_poster_top_margin": 45,
+        "sale_poster_bottom_margin": 0
+      }
+    },
+    "new_arrival": {
+      "type": "new-arrival",
+      "settings": {
+        "new_arrival_top_margin": 45,
+        "new_arrival_bottom_margin": 0
+      }
+    }
+  },
+  "order": [
+    "image_sildeshow",
+    "home_collection",
+    "sale_poster",
+    "new_arrival"
+  ]
+}

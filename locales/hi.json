@@ -1,0 +1,31 @@
+{
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "expand_order_summary_short": "दिखाओ"
+      },
+      "shipping": {
+        "split_cart_merchandise_shipment_number": "शिपमेंट %{संख्या} %{कुल} में से"
+      },
+      "payment_errors": {
+        "available_methods_updated": "उपलब्ध भुगतान विधियाँ अद्यतन कर दी गई हैं।"
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_status": {
+        "attempted_to_deliver_label": "पहुंचाने का प्रयास किया गया",
+        "there_was_a_problem_label": "वहां एक समस्या थी"
+      }
+    },
+    "profile_preview_bar": {
+      "customize_button": "अनुकूलित करें",
+      "hide_bar": "बार छिपाएँ",
+      "navigate_to_admin": "व्यवस्थापक पर नेविगेट करें",
+      "previewing": "आप पूर्वावलोकन कर रहे हैं:",
+      "saved_at": "{{date}} {{time}} पर सहेजा गया",
+      "viewing": "आप देख रहे हैं:"
+    }
+  }
+}
